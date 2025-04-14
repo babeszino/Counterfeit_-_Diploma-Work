@@ -16,8 +16,13 @@ signal map_ready(map_instance, sequence_position)
 # palyakezelo valtozok
 var current_map_index : int = 0
 var current_map_sequence_position : int = 0
-var maps : Array = []
-var maps_path : String = "res://1_scenes/7_maps/1_layouts/"
+var maps : Array = [
+	"res://1_scenes/7_maps/1_layouts/map_layout_1.tscn",
+	"res://1_scenes/7_maps/1_layouts/map_layout_2.tscn",
+	"res://1_scenes/7_maps/1_layouts/map_layout_3.tscn",
+	"res://1_scenes/7_maps/1_layouts/map_layout_4.tscn",
+	"res://1_scenes/7_maps/1_layouts/map_layout_5.tscn"
+]
 var randomized_map_indexes : Array = []
 
 # palya timer valtozok
@@ -32,25 +37,6 @@ var fast_times : Array = [20.0, 23.0, 20.0, 21.0, 22.0] # x1.25 times
 # jelenlegi palya reference-ek
 var current_map_instance = null
 var finish_door_container = null
-
-
-# palyak keresesenek elinditasa
-func _ready() -> void:
-	find_existing_maps()
-
-
-#  palyak kigyujtese a mappajukbol
-func find_existing_maps() -> void:
-	var dir = DirAccess.open(maps_path)
-	dir.list_dir_begin()
-	
-	var file_name = dir.get_next()
-	while file_name != "":
-		if file_name.begins_with("map_layout") and file_name.ends_with(".tscn"):
-			maps.append(maps_path + file_name)
-		file_name = dir.get_next()
-		
-	maps.sort()
 
 
 # randomizalt sorozat letrehozasa a palyaknak
