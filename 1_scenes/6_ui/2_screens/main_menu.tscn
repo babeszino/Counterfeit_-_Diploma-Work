@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://4qfu5in5a81x"]
+
+[ext_resource type="Script" path="res://1_scenes/6_ui/2_screens/main_menu.gd" id="1_o1lyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3ak0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svyku"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtew6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rc2oi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfsr2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slt7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyaxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72r6w"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o1lyj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.105882, 0.227451, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -51.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.752424, 0.771466, 0.999999, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 160
+text = "Counterfeit"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = -149.0
+offset_right = 195.0
+offset_bottom = -27.0
+grow_vertical = 0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+theme_override_colors/font_hover_color = Color(0.807843, 0.658824, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.857578, 0.742602, 0.920312, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3ak0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_svyku")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gtew6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rc2oi")
+text = "start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_colors/font_hover_color = Color(0.808355, 0.658011, 0.89098, 1)
+theme_override_colors/font_pressed_color = Color(0.858824, 0.741176, 0.921569, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kfsr2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_slt7g")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yyaxs")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_72r6w")
+text = "quit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

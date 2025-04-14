@@ -1,0 +1,156 @@
+[gd_scene load_steps=24 format=3 uid="uid://bq3eon7ux0sq3"]
+
+[ext_resource type="Script" path="res://1_scenes/2_weapons/double_barrel_shotgun.gd" id="1_hqisd"]
+[ext_resource type="Texture2D" uid="uid://csr70hssc4cw4" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk1.png" id="2_3p46a"]
+[ext_resource type="Texture2D" uid="uid://bmgmfpiailcdc" path="res://assets/player character/weapons/3_double barrel/shoot/player_double_barrel_shoot1.png" id="3_c3imq"]
+[ext_resource type="Texture2D" uid="uid://bte11ivie48sq" path="res://assets/player character/weapons/3_double barrel/shoot/player_double_barrel_shoot2.png" id="4_oymg2"]
+[ext_resource type="Texture2D" uid="uid://bs0253lxdmf3i" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk2.png" id="5_lm3fd"]
+[ext_resource type="Texture2D" uid="uid://bpuiboe8kgm4k" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk3.png" id="6_0ytii"]
+[ext_resource type="Texture2D" uid="uid://buomu0wffcvdx" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk4.png" id="7_o05ya"]
+[ext_resource type="Texture2D" uid="uid://binmlq0rtp70c" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk5.png" id="8_ainnk"]
+[ext_resource type="Texture2D" uid="uid://mu4lec01qdb2" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk6.png" id="9_tetj4"]
+[ext_resource type="Texture2D" uid="uid://6556t4fi2tq8" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk7.png" id="10_hl5wr"]
+[ext_resource type="Texture2D" uid="uid://n0tbacv4sua2" path="res://assets/player character/weapons/3_double barrel/walk/player_double_barrel_walk8.png" id="11_86r77"]
+[ext_resource type="Texture2D" uid="uid://64ersvth31hq" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk1.png" id="12_t2n20"]
+[ext_resource type="Texture2D" uid="uid://5axqwlcqvpwf" path="res://assets/enemy character/weapons/3_double barrel/shoot/enemy_double_barrel_shoot1.png" id="13_kaasw"]
+[ext_resource type="Texture2D" uid="uid://bfksxby5lxju1" path="res://assets/enemy character/weapons/3_double barrel/shoot/enemy_double_barrel_shoot2.png" id="14_mj8e0"]
+[ext_resource type="Texture2D" uid="uid://b4o8gfnde3wj6" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk2.png" id="15_og8li"]
+[ext_resource type="Texture2D" uid="uid://c6pceyapfy7nj" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk3.png" id="16_1qty0"]
+[ext_resource type="Texture2D" uid="uid://catkmab1wpi2u" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk4.png" id="17_ikmov"]
+[ext_resource type="Texture2D" uid="uid://dkkpmkwhcjpgf" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk5.png" id="18_mlwae"]
+[ext_resource type="Texture2D" uid="uid://rgcfnwwflfp5" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk6.png" id="19_ogvc5"]
+[ext_resource type="Texture2D" uid="uid://bhx3f7dgjk2n1" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk7.png" id="20_janum"]
+[ext_resource type="Texture2D" uid="uid://ymh8xy4vsg2" path="res://assets/enemy character/weapons/3_double barrel/walk/enemy_double_barrel_walk8.png" id="21_7joav"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf3y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3p46a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c3imq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oymg2")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3p46a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lm3fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0ytii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o05ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ainnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tetj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hl5wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_86r77")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pugb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_t2n20")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kaasw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mj8e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kaasw")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_t2n20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_og8li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1qty0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ikmov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mlwae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ogvc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_janum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7joav")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[node name="DoubleBarrel" type="Node2D"]
+script = ExtResource("1_hqisd")
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_pf3y3")
+animation = &"walk"
+
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_3pugb")
+animation = &"shoot"
+
+[node name="EndOfGun" type="Marker2D" parent="."]
+position = Vector2(81, 0)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true
+
+[node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 1.35
+one_shot = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

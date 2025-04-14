@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://btjcobe1ly1xk"]
+
+[ext_resource type="Script" path="res://1_scenes/6_ui/2_screens/death_screen.gd" id="1_2yrcq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6thd5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_458rp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plvcp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1n3hv"]
+
+[node name="DeathScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_2yrcq")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.194376, 0.144153, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "You died!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../MainMenuButton")
+theme_override_colors/font_hover_color = Color(0.807843, 0.658824, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.857578, 0.742602, 0.920312, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6thd5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_458rp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_plvcp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1n3hv")
+text = "New game"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../NewGameButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+theme_override_colors/font_hover_color = Color(0.807843, 0.658824, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.857578, 0.742602, 0.920312, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6thd5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_458rp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_plvcp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1n3hv")
+text = "Return to main menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../MainMenuButton")
+focus_neighbor_bottom = NodePath("../NewGameButton")
+theme_override_colors/font_hover_color = Color(0.807843, 0.658824, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.857578, 0.742602, 0.920312, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6thd5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_458rp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_plvcp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1n3hv")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

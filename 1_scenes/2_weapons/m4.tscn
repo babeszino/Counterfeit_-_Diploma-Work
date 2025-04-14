@@ -1,0 +1,153 @@
+[gd_scene load_steps=24 format=3 uid="uid://bet0ig2ohlwoa"]
+
+[ext_resource type="Script" path="res://1_scenes/2_weapons/m4.gd" id="1_hs63h"]
+[ext_resource type="Texture2D" uid="uid://coy2npiv1lqsg" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk1.png" id="2_q3av0"]
+[ext_resource type="Texture2D" uid="uid://cypam8a4hgjr2" path="res://assets/player character/weapons/4_m4/shoot/player_m4_shoot1.png" id="3_h43tc"]
+[ext_resource type="Texture2D" uid="uid://y2jjwpu04xt" path="res://assets/player character/weapons/4_m4/shoot/player_m4_shoot2.png" id="4_6te7a"]
+[ext_resource type="Texture2D" uid="uid://df6vso46fqpru" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk2.png" id="5_mrpqo"]
+[ext_resource type="Texture2D" uid="uid://2g5th6cb1pfb" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk3.png" id="6_jlnge"]
+[ext_resource type="Texture2D" uid="uid://cjwekfpe2su6q" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk4.png" id="7_ydipt"]
+[ext_resource type="Texture2D" uid="uid://ctm74piww3hjq" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk5.png" id="8_bxltu"]
+[ext_resource type="Texture2D" uid="uid://c71tqghe67qv2" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk6.png" id="9_ix4xv"]
+[ext_resource type="Texture2D" uid="uid://mvlhsga0qj0c" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk7.png" id="10_e5f0b"]
+[ext_resource type="Texture2D" uid="uid://drqqb4nm8abxa" path="res://assets/player character/weapons/4_m4/walk/player_m4_walk8.png" id="11_tnir1"]
+[ext_resource type="Texture2D" uid="uid://df6cajatdjduo" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk1.png" id="12_ipjpu"]
+[ext_resource type="Texture2D" uid="uid://51sx385yw85k" path="res://assets/enemy character/weapons/4_m4/shoot/enemy_m4_shoot1.png" id="13_spqhe"]
+[ext_resource type="Texture2D" uid="uid://bidsyfwatwav" path="res://assets/enemy character/weapons/4_m4/shoot/enemy_m4_shoot2.png" id="14_mdl8d"]
+[ext_resource type="Texture2D" uid="uid://cag8300kpr8pj" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk2.png" id="15_nip3f"]
+[ext_resource type="Texture2D" uid="uid://cs121lqdm75y0" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk3.png" id="16_ib5ft"]
+[ext_resource type="Texture2D" uid="uid://dor4nybqwdb2g" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk4.png" id="17_ebttp"]
+[ext_resource type="Texture2D" uid="uid://dr4g8voeekh5c" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk5.png" id="18_eqkno"]
+[ext_resource type="Texture2D" uid="uid://duvrukw1lpn2" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk6.png" id="19_q6np7"]
+[ext_resource type="Texture2D" uid="uid://dhgwpjtbbcb3o" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk7.png" id="20_qqm0y"]
+[ext_resource type="Texture2D" uid="uid://dto17lnhac4vt" path="res://assets/enemy character/weapons/4_m4/walk/enemy_m4_walk8.png" id="21_s6rwq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf3y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q3av0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h43tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6te7a")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q3av0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mrpqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jlnge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ydipt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bxltu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ix4xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e5f0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tnir1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pugb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ipjpu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_spqhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mdl8d")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ipjpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nip3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ib5ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ebttp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_eqkno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q6np7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qqm0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s6rwq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[node name="M4" type="Node2D"]
+script = ExtResource("1_hs63h")
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_pf3y3")
+animation = &"idle"
+
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_3pugb")
+animation = &"shoot"
+
+[node name="EndOfGun" type="Marker2D" parent="."]
+position = Vector2(96, 0)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true
+
+[node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

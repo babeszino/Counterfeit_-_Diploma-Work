@@ -1,0 +1,210 @@
+[gd_scene load_steps=37 format=3 uid="uid://uhngxdfe4pyn"]
+
+[ext_resource type="Script" path="res://1_scenes/2_weapons/baseball_bat.gd" id="1_oh6xh"]
+[ext_resource type="Texture2D" uid="uid://t82qqyb8x17j" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack1.png" id="2_m8bi1"]
+[ext_resource type="Texture2D" uid="uid://cthgvlqajoqni" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack2.png" id="3_ehos7"]
+[ext_resource type="Texture2D" uid="uid://cefeoqjuci3uf" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack3.png" id="4_mhsnv"]
+[ext_resource type="Texture2D" uid="uid://b4vd7dvpfvrb3" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack4.png" id="5_334dp"]
+[ext_resource type="Texture2D" uid="uid://dgotpvyhmsk7q" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack5.png" id="6_jo5rg"]
+[ext_resource type="Texture2D" uid="uid://cee3pewta2kot" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack6.png" id="7_fjpwg"]
+[ext_resource type="Texture2D" uid="uid://deeiadmy1l3du" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack7.png" id="8_ed2ip"]
+[ext_resource type="Texture2D" uid="uid://cuqff2g775jd7" path="res://assets/player character/weapons/1_baseball bat/attack/player_baseball_bat_attack8.png" id="9_p0cjm"]
+[ext_resource type="Texture2D" uid="uid://d31i7piu75qnq" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk1.png" id="10_2a5up"]
+[ext_resource type="Texture2D" uid="uid://c8k6vcrh2qqln" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk2.png" id="11_u5lcn"]
+[ext_resource type="Texture2D" uid="uid://dr2v88xitmecf" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk3.png" id="12_aadr3"]
+[ext_resource type="Texture2D" uid="uid://dg84cjet7a13v" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk4.png" id="13_uqcxx"]
+[ext_resource type="Texture2D" uid="uid://vu4qermtc57p" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk5.png" id="14_k6q1e"]
+[ext_resource type="Texture2D" uid="uid://b48sqs14f2xpj" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk6.png" id="15_cwy4d"]
+[ext_resource type="Texture2D" uid="uid://c8jrkd0frdrqg" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk7.png" id="16_ob53k"]
+[ext_resource type="Texture2D" uid="uid://bfvbcrk1lar3c" path="res://assets/player character/weapons/1_baseball bat/walk/player_baseball_bat_walk8.png" id="17_mqklb"]
+[ext_resource type="Texture2D" uid="uid://cvbjh2fbmsv18" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack1.png" id="18_wn2a8"]
+[ext_resource type="Texture2D" uid="uid://7cy87an2btdy" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack2.png" id="19_yuqes"]
+[ext_resource type="Texture2D" uid="uid://dkbyn74elbi3i" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack3.png" id="20_cepme"]
+[ext_resource type="Texture2D" uid="uid://c0qk0pgstxv0w" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack4.png" id="21_rvx7u"]
+[ext_resource type="Texture2D" uid="uid://dqgu65cknu6gr" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack5.png" id="22_1i5mc"]
+[ext_resource type="Texture2D" uid="uid://dhvtm24rq4lk7" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack6.png" id="23_c74lt"]
+[ext_resource type="Texture2D" uid="uid://5yg5i3sdnxqa" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack7.png" id="24_54x5t"]
+[ext_resource type="Texture2D" uid="uid://dytm1ud1n2541" path="res://assets/enemy character/weapons/1_baseball bat/attack/enemy_baseball_bat_attack8.png" id="25_4syhv"]
+[ext_resource type="Texture2D" uid="uid://5j7gx2dn0cs1" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk1.png" id="26_rl67r"]
+[ext_resource type="Texture2D" uid="uid://dbeocmpkoouxy" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk2.png" id="27_chvn2"]
+[ext_resource type="Texture2D" uid="uid://q6e5fv8te0yf" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk3.png" id="28_du63k"]
+[ext_resource type="Texture2D" uid="uid://cqflqp4tc6j0j" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk4.png" id="29_alo61"]
+[ext_resource type="Texture2D" uid="uid://cndwbe4ovapba" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk5.png" id="30_ucrwu"]
+[ext_resource type="Texture2D" uid="uid://c06hbviflefag" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk6.png" id="31_1gjo1"]
+[ext_resource type="Texture2D" uid="uid://d18gio61tl33q" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk7.png" id="32_84iij"]
+[ext_resource type="Texture2D" uid="uid://c7r5uf5m6ss7l" path="res://assets/enemy character/weapons/1_baseball bat/walk/enemy_baseball_bat_walk8.png" id="33_5o4hr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf3y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m8bi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ehos7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mhsnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_334dp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jo5rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fjpwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ed2ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p0cjm")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2a5up")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2a5up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u5lcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aadr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uqcxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_k6q1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cwy4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ob53k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mqklb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pugb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_wn2a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yuqes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cepme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rvx7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1i5mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_c74lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_54x5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4syhv")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_rl67r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_rl67r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_chvn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_du63k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_alo61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ucrwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1gjo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_84iij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5o4hr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oa0m"]
+size = Vector2(76, 118.5)
+
+[node name="BaseballBat" type="Node2D"]
+script = ExtResource("1_oh6xh")
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_pf3y3")
+animation = &"attack"
+
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_3pugb")
+animation = &"attack"
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.33
+one_shot = true
+
+[node name="AttackDuration" type="Timer" parent="."]
+wait_time = 0.33
+one_shot = true
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="DamageZone" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(68, 0)
+shape = SubResource("RectangleShape2D_1oa0m")
+
+[connection signal="animation_finished" from="PlayerAnimation" to="." method="_on_animation_finished"]
+[connection signal="animation_finished" from="EnemyAnimation" to="." method="_on_animation_finished"]
+[connection signal="timeout" from="AttackDuration" to="." method="_on_attack_duration_timeout"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

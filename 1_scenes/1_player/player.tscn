@@ -1,0 +1,117 @@
+[gd_scene load_steps=21 format=3 uid="uid://c70c3tbs3toos"]
+
+[ext_resource type="Script" path="res://1_scenes/1_player/player.gd" id="1_j2an2"]
+[ext_resource type="Texture2D" uid="uid://bqaujafipok54" path="res://assets/player character/movement/walk/player_walk1.png" id="2_o4ash"]
+[ext_resource type="Texture2D" uid="uid://drl42kv0lua0v" path="res://assets/player character/movement/walk/player_walk2.png" id="3_e65ov"]
+[ext_resource type="Texture2D" uid="uid://00ow3mrylhcc" path="res://assets/player character/movement/walk/player_walk3.png" id="4_0xk2h"]
+[ext_resource type="Texture2D" uid="uid://cc5hb7d2ywjy8" path="res://assets/player character/movement/walk/player_walk4.png" id="5_4yjbl"]
+[ext_resource type="Texture2D" uid="uid://giq5jy1ttl0x" path="res://assets/player character/movement/walk/player_walk5.png" id="6_kxeae"]
+[ext_resource type="Texture2D" uid="uid://brgxe5ee6exs4" path="res://assets/player character/movement/walk/player_walk6.png" id="7_m63r2"]
+[ext_resource type="Texture2D" uid="uid://do8htrko46bpt" path="res://assets/player character/movement/walk/player_walk7.png" id="8_6q7fs"]
+[ext_resource type="Texture2D" uid="uid://bahy8tp712jw4" path="res://assets/player character/movement/walk/player_walk8.png" id="9_fcgrf"]
+[ext_resource type="Texture2D" uid="uid://esuwiltoxnxc" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways1.png" id="10_8bx5k"]
+[ext_resource type="Texture2D" uid="uid://w8txpunit8gc" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways2.png" id="11_npwuj"]
+[ext_resource type="Texture2D" uid="uid://jbjq277fx15e" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways3.png" id="12_c821p"]
+[ext_resource type="Texture2D" uid="uid://baygxt2lsisof" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways4.png" id="13_1wc0l"]
+[ext_resource type="Texture2D" uid="uid://bnyautjsfjj8v" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways5.png" id="14_1jxae"]
+[ext_resource type="Texture2D" uid="uid://b4w38ia0ke50" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways6.png" id="15_ons4g"]
+[ext_resource type="Texture2D" uid="uid://7fnv6l6vunfp" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways7.png" id="16_0883r"]
+[ext_resource type="Texture2D" uid="uid://buw0cpw4ve30v" path="res://assets/player character/movement/walk (sideways)/player_walk_sideways8.png" id="17_3xr7l"]
+[ext_resource type="Script" path="res://1_scenes/1_player/player_movement.gd" id="19_y3k8s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqy66"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o4ash")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o4ash")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e65ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0xk2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4yjbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kxeae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m63r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6q7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fcgrf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8bx5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_npwuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_c821p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1wc0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1jxae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ons4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0883r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3xr7l")
+}],
+"loop": true,
+"name": &"walk_sideways",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ku7tn"]
+radius = 25.0
+height = 90.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 10
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_j2an2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_dqy66")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ku7tn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="PlayerMovement" type="Node2D" parent="."]
+script = ExtResource("19_y3k8s")
+
+[node name="WallJumpRay" type="RayCast2D" parent="PlayerMovement"]

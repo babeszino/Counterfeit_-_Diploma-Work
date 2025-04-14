@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://csp3sn1jfrc4q"]
+
+[ext_resource type="Script" path="res://1_scenes/6_ui/1_hud/ui.gd" id="1_qcsck"]
+[ext_resource type="PackedScene" uid="uid://mshkucx6t227" path="res://1_scenes/6_ui/1_hud/health_display.tscn" id="2_cx6hi"]
+[ext_resource type="PackedScene" uid="uid://b3mel4ctnym63" path="res://1_scenes/6_ui/1_hud/ammo_display.tscn" id="3_8han1"]
+[ext_resource type="PackedScene" uid="uid://c6t3uji20phab" path="res://1_scenes/6_ui/1_hud/score_display.tscn" id="5_wsrlm"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qcsck")
+
+[node name="TopContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 296.0
+offset_bottom = 90.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HealthDisplay" parent="TopContainer" instance=ExtResource("2_cx6hi")]
+visible = false
+layout_mode = 2
+
+[node name="BottomContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="AmmoDisplay" parent="BottomContainer" instance=ExtResource("3_8han1")]
+visible = false
+layout_mode = 2
+
+[node name="ScoreDisplay" parent="." instance=ExtResource("5_wsrlm")]
+visible = false
+layout_mode = 1
+
+[node name="TimerContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="TimerLabel" type="Label" parent="TimerContainer"]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 48
+text = "Time: 0:00"
+horizontal_alignment = 2

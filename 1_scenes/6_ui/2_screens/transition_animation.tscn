@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://7l507ctbvla4"]
+
+[ext_resource type="Script" path="res://1_scenes/6_ui/2_screens/transition_animation.gd" id="1_foxfm"]
+[ext_resource type="Texture2D" uid="uid://d2irsisd7x8tk" path="res://assets/transition animations/2_after fourth level/after_fourth_level1.png" id="2_opjdu"]
+[ext_resource type="Texture2D" uid="uid://dac01ydt3d14q" path="res://assets/transition animations/2_after fourth level/after_fourth_level2.png" id="3_flxv5"]
+[ext_resource type="Texture2D" uid="uid://dooqgys20j0mh" path="res://assets/transition animations/2_after fourth level/after_fourth_level3.png" id="4_jjkhc"]
+[ext_resource type="Texture2D" uid="uid://c5dknah0754og" path="res://assets/transition animations/2_after fourth level/after_fourth_level4.png" id="5_7d3j1"]
+[ext_resource type="Texture2D" uid="uid://vp1p2n464idx" path="res://assets/transition animations/2_after fourth level/after_fourth_level5.png" id="6_uj3sq"]
+[ext_resource type="Texture2D" uid="uid://pj6v0vtw3m0p" path="res://assets/transition animations/2_after fourth level/after_fourth_level6.png" id="7_xwi3c"]
+[ext_resource type="Texture2D" uid="uid://d0lgeoyx1ibol" path="res://assets/transition animations/2_after fourth level/after_fourth_level7.png" id="8_0aq0n"]
+[ext_resource type="Texture2D" uid="uid://2bfxk0woewx5" path="res://assets/transition animations/1_after second level/after_second_level1.png" id="9_gitgv"]
+[ext_resource type="Texture2D" uid="uid://3q0n24l5jn0c" path="res://assets/transition animations/1_after second level/after_second_level2.png" id="10_rbarx"]
+[ext_resource type="Texture2D" uid="uid://bk5phv2im763c" path="res://assets/transition animations/1_after second level/after_second_level3.png" id="11_w3r51"]
+[ext_resource type="Texture2D" uid="uid://cwe0lki46s7jl" path="res://assets/transition animations/1_after second level/after_second_level4.png" id="12_qouml"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hft8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_opjdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_flxv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jjkhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7d3j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uj3sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xwi3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0aq0n")
+}],
+"loop": true,
+"name": &"end_game",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gitgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rbarx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w3r51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qouml")
+}],
+"loop": true,
+"name": &"mid_game",
+"speed": 3.0
+}]
+
+[node name="TransitionAnimation" type="CanvasLayer"]
+script = ExtResource("1_foxfm")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(1.12, 1.12)
+sprite_frames = SubResource("SpriteFrames_0hft8")
+animation = &"end_game"
+
+[node name="AnimationTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ContinueLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -63.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Press any key to continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]

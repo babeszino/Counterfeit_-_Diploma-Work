@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlra1pyn3q201"]
+
+[ext_resource type="Script" path="res://1_scenes/6_ui/2_screens/pause_menu.gd" id="1_cg2pk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0ejf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smb84"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnx2l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5nh5"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cg2pk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -24.0
+offset_right = 108.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../MainMenuButton")
+theme_override_colors/font_hover_color = Color(0.807843, 0.658824, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.857578, 0.742602, 0.920312, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p0ejf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_smb84")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rnx2l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b5nh5")
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+theme_override_colors/font_hover_color = Color(0.807843, 0.658824, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.857578, 0.742602, 0.920312, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p0ejf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_smb84")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rnx2l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b5nh5")
+text = "Return to main menu"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../MainMenuButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+theme_override_colors/font_hover_color = Color(0.807843, 0.658824, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.857578, 0.742602, 0.920312, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.368627, 0.713726, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p0ejf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_smb84")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rnx2l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b5nh5")
+text = "Quit"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,156 @@
+[gd_scene load_steps=24 format=3 uid="uid://dxywyh2v0bi41"]
+
+[ext_resource type="Script" path="res://1_scenes/2_weapons/glock18.gd" id="1_ws8qo"]
+[ext_resource type="Texture2D" uid="uid://6g1ts33dnrpc" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk1.png" id="2_tgrti"]
+[ext_resource type="Texture2D" uid="uid://bhw7qu4vjc2me" path="res://assets/player character/weapons/2_glock18/shoot/player_glock18_shoot1.png" id="3_mdvye"]
+[ext_resource type="Texture2D" uid="uid://dbipmu5h2hwp6" path="res://assets/player character/weapons/2_glock18/shoot/player_glock18_shoot2.png" id="4_c4b3x"]
+[ext_resource type="Texture2D" uid="uid://cyednkv4a3rim" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk2.png" id="5_tjvc0"]
+[ext_resource type="Texture2D" uid="uid://d0wswdy1r4dny" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk3.png" id="6_76elx"]
+[ext_resource type="Texture2D" uid="uid://cyueycunnvevn" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk4.png" id="7_s8u3a"]
+[ext_resource type="Texture2D" uid="uid://d4ctocw81v0kv" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk5.png" id="8_yf55w"]
+[ext_resource type="Texture2D" uid="uid://gc78bn6nbr7i" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk6.png" id="9_ikefx"]
+[ext_resource type="Texture2D" uid="uid://bqt3f3g5g0lqd" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk7.png" id="10_66iws"]
+[ext_resource type="Texture2D" uid="uid://b182oywy5r5kw" path="res://assets/player character/weapons/2_glock18/walk/player_glock18_walk8.png" id="11_av666"]
+[ext_resource type="Texture2D" uid="uid://b6dqead1dgd43" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk1.png" id="12_8b0nm"]
+[ext_resource type="Texture2D" uid="uid://bndt64v4n25bw" path="res://assets/enemy character/weapons/2_glock18/shoot/enemy_glock18_shoot1.png" id="13_b68tc"]
+[ext_resource type="Texture2D" uid="uid://bc1k067y0rrih" path="res://assets/enemy character/weapons/2_glock18/shoot/enemy_glock18_shoot2.png" id="14_c48kp"]
+[ext_resource type="Texture2D" uid="uid://c8euxuqtbu4sp" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk2.png" id="15_s2dyo"]
+[ext_resource type="Texture2D" uid="uid://c2ojoo7yomdfn" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk3.png" id="16_rid5u"]
+[ext_resource type="Texture2D" uid="uid://bjdjyg6datckp" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk4.png" id="17_2ccks"]
+[ext_resource type="Texture2D" uid="uid://chcascp84oyn" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk5.png" id="18_ndf0o"]
+[ext_resource type="Texture2D" uid="uid://c8mhi6tf0d7jm" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk6.png" id="19_w2p8w"]
+[ext_resource type="Texture2D" uid="uid://rv7av3k6k1i" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk7.png" id="20_wyng7"]
+[ext_resource type="Texture2D" uid="uid://cwclwmeve3qf2" path="res://assets/enemy character/weapons/2_glock18/walk/enemy_glock18_walk8.png" id="21_psfxt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njpi6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tgrti")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mdvye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c4b3x")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tgrti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tjvc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_76elx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s8u3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yf55w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ikefx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_66iws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_av666")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhahk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_8b0nm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_b68tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c48kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8b0nm")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_8b0nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s2dyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rid5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2ccks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ndf0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w2p8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wyng7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_psfxt")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[node name="Glock18" type="Node2D"]
+script = ExtResource("1_ws8qo")
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_njpi6")
+animation = &"shoot"
+
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vhahk")
+animation = &"shoot"
+
+[node name="EndOfGun" type="Marker2D" parent="."]
+position = Vector2(78, 0)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

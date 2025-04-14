@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://81vikiantxyn"]
+
+[ext_resource type="Script" path="res://1_scenes/4_projectiles/rocket.gd" id="1_pwtjy"]
+[ext_resource type="Texture2D" uid="uid://cvi10vhg3w61n" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket flying/rocket1.png" id="2_4r1ad"]
+[ext_resource type="Texture2D" uid="uid://ky3yacvdjtut" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket flying/rocket2.png" id="3_64vib"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkum3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4r1ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_64vib")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btweu"]
+radius = 0.75
+height = 4.0
+
+[node name="Rocket" type="Area2D" groups=["rocket"]]
+z_index = 15
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_pwtjy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rkum3")
+animation = &"flying"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.89599e-05, -8)
+scale = Vector2(4, 4)
+shape = SubResource("CapsuleShape2D_btweu")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

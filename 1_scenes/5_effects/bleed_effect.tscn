@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://brk3po85sund8"]
+
+[ext_resource type="Texture2D" uid="uid://dvebhkmi2hgoo" path="res://assets/blood/character bleeding/character_bleeding1.png" id="1_01fhf"]
+[ext_resource type="Texture2D" uid="uid://27ey73h7fomc" path="res://assets/blood/character bleeding/character_bleeding2.png" id="2_pw7w3"]
+[ext_resource type="Texture2D" uid="uid://c55p0jr4v75qv" path="res://assets/blood/character bleeding/character_bleeding3.png" id="3_8mbkm"]
+[ext_resource type="Texture2D" uid="uid://5o8r4vctypif" path="res://assets/blood/character bleeding/character_bleeding4.png" id="4_x04gq"]
+[ext_resource type="Texture2D" uid="uid://c01kyevstrnqy" path="res://assets/blood/character bleeding/character_bleeding5.png" id="5_1t3nf"]
+[ext_resource type="Texture2D" uid="uid://bfq1y15knej5" path="res://assets/blood/character bleeding/character_bleeding6.png" id="6_sfsqk"]
+[ext_resource type="Texture2D" uid="uid://cp5aqnak1jtyu" path="res://assets/blood/character bleeding/character_bleeding7.png" id="7_lm4ju"]
+[ext_resource type="Texture2D" uid="uid://b5o8mymksei5g" path="res://assets/blood/character bleeding/character_bleeding8.png" id="8_comi2"]
+[ext_resource type="Script" path="res://1_scenes/5_effects/bleed_effect.gd" id="9_udkix"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5mxm6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_01fhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pw7w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8mbkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x04gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1t3nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sfsqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lm4ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_comi2")
+}],
+"loop": false,
+"name": &"bleed",
+"speed": 16.0
+}]
+
+[node name="BleedEffect" type="AnimatedSprite2D"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_5mxm6")
+animation = &"bleed"
+script = ExtResource("9_udkix")
+
+[node name="DurationTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]

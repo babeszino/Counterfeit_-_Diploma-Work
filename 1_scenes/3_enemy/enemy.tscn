@@ -1,0 +1,154 @@
+[gd_scene load_steps=24 format=3 uid="uid://bmmoqbd78j0j5"]
+
+[ext_resource type="Script" path="res://1_scenes/3_enemy/enemy.gd" id="1_327h3"]
+[ext_resource type="Texture2D" uid="uid://bm7kc8utbnaa7" path="res://assets/enemy character/movement/walk/enemy_walk1.png" id="2_n45gv"]
+[ext_resource type="Texture2D" uid="uid://c71dpelpkq6tm" path="res://assets/enemy character/movement/walk/enemy_walk2.png" id="3_1wxxg"]
+[ext_resource type="Texture2D" uid="uid://dwdnck6uysusb" path="res://assets/enemy character/movement/walk/enemy_walk3.png" id="4_xwxfo"]
+[ext_resource type="Script" path="res://1_scenes/3_enemy/enemy_ai.gd" id="5_nmkbx"]
+[ext_resource type="Texture2D" uid="uid://is4ae08k3x8w" path="res://assets/enemy character/movement/walk/enemy_walk4.png" id="5_uv3hi"]
+[ext_resource type="Script" path="res://1_scenes/3_enemy/enemy_movement.gd" id="6_7ub4r"]
+[ext_resource type="Texture2D" uid="uid://c4bdcqykoieku" path="res://assets/enemy character/movement/walk/enemy_walk5.png" id="6_uab70"]
+[ext_resource type="Texture2D" uid="uid://ct68ftawrd4vi" path="res://assets/enemy character/movement/walk/enemy_walk6.png" id="7_5b1n5"]
+[ext_resource type="Texture2D" uid="uid://dv0swsckgekl1" path="res://assets/enemy character/movement/walk/enemy_walk7.png" id="8_xshdo"]
+[ext_resource type="Texture2D" uid="uid://btx42bwxjt68x" path="res://assets/enemy character/movement/walk/enemy_walk8.png" id="9_67vfy"]
+[ext_resource type="Texture2D" uid="uid://bnp3hpgs72lgq" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways1.png" id="10_4goar"]
+[ext_resource type="Texture2D" uid="uid://b81i8g4dxcmv1" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways2.png" id="11_b5egr"]
+[ext_resource type="Texture2D" uid="uid://cjqsn6v78a4nc" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways3.png" id="12_wyinl"]
+[ext_resource type="Texture2D" uid="uid://cjje5eyuk0ieh" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways4.png" id="13_jg0v6"]
+[ext_resource type="Texture2D" uid="uid://cnp26quqhmv2d" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways5.png" id="14_aboy3"]
+[ext_resource type="Texture2D" uid="uid://pnhmcath6j5o" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways6.png" id="15_s6uoh"]
+[ext_resource type="Texture2D" uid="uid://cqx37wiagk5ak" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways7.png" id="16_y0flm"]
+[ext_resource type="Texture2D" uid="uid://lgswwnmde3w2" path="res://assets/enemy character/movement/walk (sideways)/enemy_walk_sideways8.png" id="17_r67uo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cu2aw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n45gv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n45gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1wxxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xwxfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uv3hi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uab70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5b1n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xshdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_67vfy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4goar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b5egr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wyinl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jg0v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_aboy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s6uoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y0flm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_r67uo")
+}],
+"loop": true,
+"name": &"walk_sideways",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_npllq"]
+radius = 25.0
+height = 90.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ujeph"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_civcf"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+z_index = 5
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("1_327h3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_cu2aw")
+animation = &"walk_sideways"
+frame_progress = 0.832783
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_npllq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+path_max_distance = 500.0
+avoidance_enabled = true
+
+[node name="EnemyAI" type="Node2D" parent="."]
+script = ExtResource("5_nmkbx")
+
+[node name="PlayerDetectionZone" type="Area2D" parent="EnemyAI"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnemyAI/PlayerDetectionZone"]
+scale = Vector2(1.68645, 0.6525)
+polygon = PackedVector2Array(0, 0, 500, -500, 500, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAI/PlayerDetectionZone"]
+scale = Vector2(30, 30)
+shape = SubResource("CircleShape2D_ujeph")
+
+[node name="BulletDetectionZone" type="Area2D" parent="EnemyAI"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAI/BulletDetectionZone"]
+scale = Vector2(35, 35)
+shape = SubResource("CircleShape2D_civcf")
+
+[node name="LineOfSightRay" type="RayCast2D" parent="EnemyAI"]
+collision_mask = 3
+hit_from_inside = true
+
+[node name="EnemyMovement" type="Node2D" parent="."]
+script = ExtResource("6_7ub4r")
+
+[connection signal="body_entered" from="EnemyAI/PlayerDetectionZone" to="EnemyAI" method="_on_player_detection_zone_body_entered"]
+[connection signal="area_entered" from="EnemyAI/BulletDetectionZone" to="EnemyAI" method="_on_bullet_detection_zone_area_entered"]

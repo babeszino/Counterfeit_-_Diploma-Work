@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://dq6mrfih01xxj"]
+
+[ext_resource type="Script" path="res://1_scenes/2_weapons/rocket_launcher.gd" id="1_3vuew"]
+[ext_resource type="Texture2D" uid="uid://wcf8kp6dcmbe" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk1.png" id="2_o1n4c"]
+[ext_resource type="Texture2D" uid="uid://cam0m1afjkny0" path="res://assets/player character/weapons/5_rocket launcher/shoot/player_rocket_launcher_shoot1.png" id="3_ixbio"]
+[ext_resource type="Texture2D" uid="uid://xk8ai7onhqk4" path="res://assets/player character/weapons/5_rocket launcher/shoot/player_rocket_launcher_shoot2.png" id="4_p3wbb"]
+[ext_resource type="Texture2D" uid="uid://dwpuli5hu0p52" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk2.png" id="5_jg4g4"]
+[ext_resource type="Texture2D" uid="uid://c0s2ljybjvd6e" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk3.png" id="6_nyoug"]
+[ext_resource type="Texture2D" uid="uid://c683flbpscqd4" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk4.png" id="7_8vvjy"]
+[ext_resource type="Texture2D" uid="uid://csrthqqcqmrbj" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk5.png" id="8_xqbqr"]
+[ext_resource type="Texture2D" uid="uid://bnw1jrydj82vm" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk6.png" id="9_f8s4c"]
+[ext_resource type="Texture2D" uid="uid://br7sv8h32xo0p" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk7.png" id="10_iff8g"]
+[ext_resource type="Texture2D" uid="uid://fov2jehpakgk" path="res://assets/player character/weapons/5_rocket launcher/walk/player_rocket_launcher_walk8.png" id="11_sbmoa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf3y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o1n4c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ixbio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p3wbb")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o1n4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jg4g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nyoug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8vvjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xqbqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f8s4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iff8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sbmoa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 15.0
+}]
+
+[node name="RocketLauncher" type="Node2D"]
+script = ExtResource("1_3vuew")
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_pf3y3")
+animation = &"shoot"
+
+[node name="EndOfGun" type="Marker2D" parent="."]
+position = Vector2(108, 12)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

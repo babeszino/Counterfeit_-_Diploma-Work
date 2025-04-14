@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://r7o121jhgbs7"]
+
+[ext_resource type="Script" path="res://1_scenes/4_projectiles/explosion.gd" id="1_2hya7"]
+[ext_resource type="Texture2D" uid="uid://6no2fs3uswpk" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion1.png" id="2_y7knl"]
+[ext_resource type="Texture2D" uid="uid://ds4gt8aqo1nvv" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion2.png" id="3_ae05v"]
+[ext_resource type="Texture2D" uid="uid://b5vybthcteyua" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion3.png" id="4_h6aoi"]
+[ext_resource type="Texture2D" uid="uid://cxojmgujwrjmk" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion4.png" id="5_6w7uh"]
+[ext_resource type="Texture2D" uid="uid://smypihsl5tos" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion5.png" id="6_3n2d5"]
+[ext_resource type="Texture2D" uid="uid://blqv7wueyah5m" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion6.png" id="7_v4yxk"]
+[ext_resource type="Texture2D" uid="uid://xcno56ljlna1" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion7.png" id="8_nh2h8"]
+[ext_resource type="Texture2D" uid="uid://dfqqys38v52yy" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion8.png" id="9_k8vkn"]
+[ext_resource type="Texture2D" uid="uid://djrw1j6kfbnqk" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion9.png" id="10_7skve"]
+[ext_resource type="Texture2D" uid="uid://7cvonx7ylt6k" path="res://assets/player character/weapons/5_rocket launcher/rocket/rocket explosion/rocket_explosion10.png" id="11_co7li"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4k1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y7knl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ae05v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h6aoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6w7uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3n2d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_v4yxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nh2h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k8vkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7skve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_co7li")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nxspf"]
+radius = 64.0078
+
+[node name="Explosion" type="Area2D"]
+collision_layer = 0
+collision_mask = 9
+script = ExtResource("1_2hya7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b4k1y")
+animation = &"explosion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nxspf")
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

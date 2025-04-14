@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://s55kvpyv3f1"]
+
+[ext_resource type="Texture2D" uid="uid://qmmiqkead6ty" path="res://assets/blood/blood stain/blood_stain1.png" id="1_5k4b5"]
+[ext_resource type="Texture2D" uid="uid://dqc55eklxka70" path="res://assets/blood/blood stain/blood_stain2.png" id="2_m08bq"]
+[ext_resource type="Texture2D" uid="uid://3daknp55mu60" path="res://assets/blood/blood stain/blood_stain3.png" id="3_uu3vi"]
+[ext_resource type="Texture2D" uid="uid://khu7gaxwxvtt" path="res://assets/blood/blood stain/blood_stain4.png" id="4_kppyj"]
+[ext_resource type="Texture2D" uid="uid://tmnxibvgqy4j" path="res://assets/blood/blood stain/blood_stain5.png" id="5_3hew8"]
+[ext_resource type="Texture2D" uid="uid://cv8oqpx2tfadd" path="res://assets/blood/blood stain/blood_stain6.png" id="6_brkxg"]
+[ext_resource type="Texture2D" uid="uid://c051nyu5ij4ja" path="res://assets/blood/blood stain/blood_stain7.png" id="7_w76ko"]
+[ext_resource type="Texture2D" uid="uid://btgwqv2gp3aoh" path="res://assets/blood/blood stain/blood_stain8.png" id="8_ra8fw"]
+[ext_resource type="Script" path="res://1_scenes/5_effects/bloodstain.gd" id="9_e1d5c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5it13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5k4b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m08bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uu3vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kppyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3hew8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_brkxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w76ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ra8fw")
+}],
+"loop": false,
+"name": &"bloodstain",
+"speed": 8.0
+}]
+
+[node name="Bloodstain" type="AnimatedSprite2D" groups=["bloodstain"]]
+z_index = -7
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_5it13")
+animation = &"bloodstain"
+script = ExtResource("9_e1d5c")
+
+[node name="DurationTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]

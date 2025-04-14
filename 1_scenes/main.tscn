@@ -1,0 +1,81 @@
+[gd_scene load_steps=17 format=3 uid="uid://bpoyniwfq3c1j"]
+
+[ext_resource type="Script" path="res://2_scripts/1_managers/game_manager.gd" id="1_lurhb"]
+[ext_resource type="Script" path="res://2_scripts/1_managers/level_manager.gd" id="2_v2jxe"]
+[ext_resource type="Script" path="res://2_scripts/1_managers/enemy_manager.gd" id="3_5e0da"]
+[ext_resource type="Script" path="res://2_scripts/1_managers/weapon_manager.gd" id="4_pcat3"]
+[ext_resource type="Script" path="res://2_scripts/1_managers/projectile_manager.gd" id="5_i6lde"]
+[ext_resource type="Script" path="res://2_scripts/1_managers/ui_manager.gd" id="6_s2i61"]
+[ext_resource type="Script" path="res://2_scripts/1_managers/score_system.gd" id="7_rto3r"]
+[ext_resource type="PackedScene" uid="uid://4qfu5in5a81x" path="res://1_scenes/6_ui/2_screens/main_menu.tscn" id="8_tslu6"]
+[ext_resource type="PackedScene" uid="uid://dlra1pyn3q201" path="res://1_scenes/6_ui/2_screens/pause_menu.tscn" id="9_vkida"]
+[ext_resource type="PackedScene" uid="uid://csp3sn1jfrc4q" path="res://1_scenes/6_ui/1_hud/ui.tscn" id="10_pwkbu"]
+[ext_resource type="PackedScene" uid="uid://c70c3tbs3toos" path="res://1_scenes/1_player/player.tscn" id="11_me4o8"]
+[ext_resource type="PackedScene" uid="uid://uhngxdfe4pyn" path="res://1_scenes/2_weapons/baseball_bat.tscn" id="12_6g7d2"]
+[ext_resource type="PackedScene" uid="uid://dxywyh2v0bi41" path="res://1_scenes/2_weapons/glock18.tscn" id="13_df2it"]
+[ext_resource type="PackedScene" uid="uid://bq3eon7ux0sq3" path="res://1_scenes/2_weapons/double_barrel_shotgun.tscn" id="14_4mv7e"]
+[ext_resource type="PackedScene" uid="uid://bet0ig2ohlwoa" path="res://1_scenes/2_weapons/m4.tscn" id="15_88j88"]
+[ext_resource type="PackedScene" uid="uid://dq6mrfih01xxj" path="res://1_scenes/2_weapons/rocket_launcher.tscn" id="16_y4y17"]
+
+[node name="Main" type="Node"]
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="GameManager" type="Node" parent="Managers"]
+script = ExtResource("1_lurhb")
+
+[node name="LevelManager" type="Node" parent="Managers"]
+script = ExtResource("2_v2jxe")
+
+[node name="EnemyManager" type="Node" parent="Managers"]
+script = ExtResource("3_5e0da")
+
+[node name="WeaponManager" type="Node" parent="Managers"]
+script = ExtResource("4_pcat3")
+
+[node name="ProjectileManager" type="Node" parent="Managers"]
+script = ExtResource("5_i6lde")
+
+[node name="UIManager" type="Node" parent="Managers"]
+script = ExtResource("6_s2i61")
+
+[node name="ScoreSystem" type="Node" parent="Managers"]
+script = ExtResource("7_rto3r")
+
+[node name="UIContainer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="MainMenu" parent="UIContainer" instance=ExtResource("8_tslu6")]
+
+[node name="PauseMenu" parent="UIContainer" instance=ExtResource("9_vkida")]
+
+[node name="HUD" parent="UIContainer" instance=ExtResource("10_pwkbu")]
+visible = false
+mouse_filter = 2
+
+[node name="LevelContainer" type="Node" parent="."]
+
+[node name="PlayerContainer" type="Node" parent="."]
+
+[node name="Player" parent="PlayerContainer" instance=ExtResource("11_me4o8")]
+
+[node name="EnemyContainer" type="Node" parent="."]
+
+[node name="ProjectileContainer" type="Node" parent="."]
+
+[node name="WeaponsContainer" type="Node" parent="."]
+
+[node name="BaseballBat" parent="WeaponsContainer" instance=ExtResource("12_6g7d2")]
+visible = false
+
+[node name="Glock18" parent="WeaponsContainer" instance=ExtResource("13_df2it")]
+visible = false
+
+[node name="DoubleBarrel" parent="WeaponsContainer" instance=ExtResource("14_4mv7e")]
+visible = false
+
+[node name="M4" parent="WeaponsContainer" instance=ExtResource("15_88j88")]
+visible = false
+
+[node name="RocketLauncher" parent="WeaponsContainer" instance=ExtResource("16_y4y17")]
+visible = false
