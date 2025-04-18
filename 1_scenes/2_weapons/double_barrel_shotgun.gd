@@ -25,7 +25,6 @@ var bullet_scene
 var max_ammo : int = 2
 var current_ammo : int = 2
 var is_reloading : bool = false
-var weapon_name : String = "Double Barrel Shotgun"
 var auto_fire : bool = false
 var pellet_count : int = 6  # pellet-ek szama lovesenkent
 var spread_angle : float = 0.6  # szorasi szog (radianban)

@@ -27,7 +27,6 @@ var rocket_scene
 var max_ammo : int = 2
 var current_ammo : int = 2
 var is_reloading : bool = false
-var weapon_name : String = "Rocket Launcher"
 var auto_fire : bool = false
 
 # animacio allapot valtozok

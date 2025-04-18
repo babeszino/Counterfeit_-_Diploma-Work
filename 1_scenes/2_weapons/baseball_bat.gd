@@ -20,7 +20,6 @@ var player_cooldown : float = 0.33
 var enemy_cooldown : float = 1
 
 # fegyver allapot valtozok
-var weapon_name : String = "Baseball Bat"
 var is_attacking : bool = false
 var owner_moving : bool = false
 var current_animation : String = "idle"

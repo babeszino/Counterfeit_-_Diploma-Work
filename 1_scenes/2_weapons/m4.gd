@@ -25,7 +25,6 @@ var bullet_scene
 var max_ammo : int = 30
 var current_ammo : int = 30
 var is_reloading : bool = false
-var weapon_name : String = "M4 Assault Rifle"
 var auto_fire : bool = true
 
 # animacio es allapot valtozok

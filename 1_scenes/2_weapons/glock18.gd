@@ -25,6 +25,7 @@ var bullet_scene
 var max_ammo : int = 18
 var current_ammo : int = 18
 var is_reloading : bool = false
+var auto_fire : bool = false
 
 # animacio allapot valtozok
 var current_animation : String = "idle"
