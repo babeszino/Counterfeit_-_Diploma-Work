@@ -34,7 +34,6 @@ var current_animation : String = "idle"
 var is_shooting : bool = false
 var owner_moving : bool = false
 var active_animation = null
-var is_enemy : bool = false
 
 
 # fegyver inicializalasa
@@ -57,14 +56,12 @@ func setup_weapon_owner() -> void:
 		player_animation.visible = true
 		enemy_animation.visible = false
 		active_animation = player_animation
-		is_enemy = false
 		attack_cooldown.wait_time = player_cooldown
 	
 	elif parent and parent.is_in_group("enemy"):
 		player_animation.visible = false
 		enemy_animation.visible = true
 		active_animation = enemy_animation
-		is_enemy = true
 		attack_cooldown.wait_time = enemy_cooldown
 
 

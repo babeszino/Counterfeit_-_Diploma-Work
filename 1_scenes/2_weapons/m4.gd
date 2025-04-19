@@ -32,7 +32,6 @@ var current_animation : String = "idle"
 var is_shooting : bool = false
 var owner_moving : bool = false
 var active_animation = null
-var is_enemy : bool = false
 var fire_button_held : bool = false # szamon tartja, hogy lenyomva tartjuk-e a "fire" gombot
 
 
@@ -56,14 +55,12 @@ func setup_weapon_owner() -> void:
 		player_animation.visible = true
 		enemy_animation.visible = false
 		active_animation = player_animation
-		is_enemy = false
 		attack_cooldown.wait_time = player_cooldown
 	
 	elif parent and parent.is_in_group("enemy"):
 		player_animation.visible = false
 		enemy_animation.visible = true
 		active_animation = enemy_animation
-		is_enemy = true
 		attack_cooldown.wait_time = enemy_cooldown
 
 
@@ -75,7 +72,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("reload") and !is_reloading and current_ammo < max_ammo:
 		reload()
 	
-	if !is_enemy and auto_fire and fire_button_held and can_shoot():
+	if get_parent().is_in_group("player") and auto_fire and fire_button_held and can_shoot():
 		shoot()
 	
 	if is_shooting and attack_cooldown.is_stopped():

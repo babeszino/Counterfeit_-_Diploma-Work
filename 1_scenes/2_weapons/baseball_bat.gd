@@ -24,7 +24,6 @@ var is_attacking : bool = false
 var owner_moving : bool = false
 var current_animation : String = "idle"
 var active_animation = null
-var is_enemy : bool = false
 var hit_targets = []
 
 
@@ -49,7 +48,6 @@ func setup_weapon_owner() -> void:
 		player_animation.visible = true
 		enemy_animation.visible = false
 		active_animation = player_animation
-		is_enemy = false
 		attack_area.collision_mask = 4 # 4 - enemies
 		attack_cooldown.wait_time = player_cooldown
 		
@@ -57,7 +55,6 @@ func setup_weapon_owner() -> void:
 		player_animation.visible = false
 		enemy_animation.visible = true
 		active_animation = enemy_animation
-		is_enemy = true
 		attack_area.collision_mask = 2 # 2 - player
 		attack_cooldown.wait_time = enemy_cooldown
 
@@ -184,10 +181,11 @@ func _handle_hit(body: Node2D) -> void:
 	
 	hit_targets.append(body)
 	
-	if is_enemy and body.is_in_group("player"):
+	var parent = get_parent()
+	if parent.is_in_group("enemy") and body.is_in_group("player"):
 		if body.has_method("handle_hit"):
 			body.handle_hit(enemy_damage)
-	elif !is_enemy and body.is_in_group("enemy"):
+	elif parent.is_in_group("player") and body.is_in_group("enemy"):
 		if body.has_method("handle_hit"):
 			body.handle_hit(player_damage)
 
